@@ -1,0 +1,31 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                <h5>Deletar um HQ/Mangá</h5>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md">
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form.errors }}
+                            <div class="form-group">
+                                <p>Tem certeza que deseja deletar o item "{{ quadrinhos.nome }}"</p>
+                                <button type="submit" class="btn  btn-danger">Deletar</button>
+                                <button class="btn  btn-secondary" href="{% url 'quadrinhos_list' %}">Cancelar</button>
+                            </div>
+                        </form>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- [ form-element ] end -->
+</div>
+{% endblock content %}

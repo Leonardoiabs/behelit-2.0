@@ -1,0 +1,51 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                <h5>Cadastrar um HQ/Mangá</h5>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form.errors }}
+                            <div class="form-group">
+                                <label for="{{ form.nome.id_for_label }}">{{ form.nome.label }}:</label>
+                                {{ form.nome }}
+                            </div>
+                            <div class="form-group">
+                                <label for="{{ form.link.id_for_label }}">{{ form.link.label }}:</label>
+                                {{ form.link }}
+                            </div>
+                            <div class="form-group">
+                                <label for="{{ form.status.id_for_label }}">{{ form.status.label }}</label>
+                                {{ form.status }}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+
+                            <div class="form-group">
+                                <label for="{{ form.tipo.id_for_label }}">{{ form.tipo.label }}:</label>
+                                {{ form.tipo }}
+                            </div>
+                            <div class="form-group">
+                                <label for="{{ form.descricao.id_for_label }}">{{ form.descricao.label }}:</label>
+                                {{ form.descricao }}
+                            </div>
+                            <button type="submit" class="btn  btn-warning">Atualizar</button>
+                            <button class="btn  btn-danger" href="{% url 'quadrinhos_list' %}">Cancelar</button>
+                        </form>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- [ form-element ] end -->
+</div>
+{% endblock content %}

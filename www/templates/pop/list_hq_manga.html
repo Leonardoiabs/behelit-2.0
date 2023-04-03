@@ -1,0 +1,45 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+    <!-- Begin Page Content -->
+                    <div class="container-fluid">
+
+                        <!-- Page Heading -->
+                        <h1 class="h3 mb-4 text-gray-800">Listagem dos HQs e Mangás</h1>
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <a href="{% url 'quadrinhos_add' %}" class="btn btn-primary" style="margin: 10px">Cadastrar um Título</a>
+                                </div>
+                            </div>
+                            <table class="table">
+                              <thead class="thead-dark">
+                                <tr>
+                                  <th scope="col">#</th>
+                                  <th scope="col">Título</th>
+                                  <th scope="col">Status</th>
+                                  <th scope="col">Tipo</th>
+                                  <th scope="col">Ações</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                              {%  for quadrinho in object_list %}
+                                <tr>
+                                  <th scope="row">{{ quadrinho.id }}</th>
+                                  <td>{{ quadrinho.nome }}</td>
+                                  <td>{{ quadrinho.status }}</td>
+                                  <td>{{ quadrinho.tipo }}</td>
+                                  <td>
+                                      <a href="{% url 'quadrinhos_update' quadrinho.id %}" class="btn btn-warning">Atualizar</a>
+                                      <a href="#" class="btn btn-dark">Ver Detalhes</a>
+                                      <a href="{% url 'quadrinhos_delete' quadrinho.id %}" class="btn btn-danger">Deletar</a>
+                                  </td>
+                                </tr>
+                              {% endfor %}
+                              </tbody>
+                            </table>
+                    </div>
+    <!-- /.container-fluid -->
+    {% block footer %}
+        {% include 'base/footer.html' %}
+    {% endblock footer %}
+{% endblock content %}
