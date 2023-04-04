@@ -30,7 +30,7 @@
                                   <td>{{ quadrinho.tipo }}</td>
                                   <td>
                                       <a href="{% url 'quadrinhos_update' quadrinho.id %}" class="btn btn-warning">Atualizar</a>
-                                      <a href="#" class="btn btn-dark">Ver Detalhes</a>
+                                      <a href="{% url 'quadrinhos_detail' quadrinho.id %}" class="btn btn-dark">Ver Detalhes</a>
                                       <a href="{% url 'quadrinhos_delete' quadrinho.id %}" class="btn btn-danger">Deletar</a>
                                   </td>
                                 </tr>
