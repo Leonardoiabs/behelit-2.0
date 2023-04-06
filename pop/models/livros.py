@@ -20,7 +20,7 @@ class Livros(models.Model):
     autor = models.CharField(max_length=200)
     descricao = models.TextField()
     link = models.URLField()
-    foto = models.ImageField()
+    foto = models.ImageField(upload_to='livros/')
     status = models.CharField(max_length=30, choices=STATUS_CHOICES)
 
     def __str__(self):

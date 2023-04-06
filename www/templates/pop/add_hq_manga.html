@@ -12,7 +12,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                        <form method="post">
+                        <form method="post" enctype="multipart/form-data">
                             {% csrf_token %}
                             {{ form.errors }}
                             <div class="form-group">
@@ -24,12 +24,15 @@
                                 {{ form.link }}
                             </div>
                             <div class="form-group">
+                                <label for="{{ form.foto.id_for_label }}">{{ form.foto.label }}</label>
+                                {{ form.foto }}
+                            </div>
+                            <div class="form-group">
                                 <label for="{{ form.status.id_for_label }}">{{ form.status.label }}</label>
                                 {{ form.status }}
                             </div>
                         </div>
                         <div class="col-md-6">
-
                             <div class="form-group">
                                 <label for="{{ form.tipo.id_for_label }}">{{ form.tipo.label }}:</label>
                                 {{ form.tipo }}

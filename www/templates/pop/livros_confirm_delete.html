@@ -1,0 +1,31 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                <h5>Deletar um Livro</h5>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md">
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form.errors }}
+                            <div class="form-group">
+                                <p>Tem certeza que deseja deletar o item "{{ object.nome }}"</p>
+                                <button type="submit" class="btn  btn-danger">Deletar</button>
+                                <button class="btn  btn-secondary"><a href="{% url 'livros_list' %}" style="text-decoration: none; color: white;">Cancelar</a></button>
+                            </div>
+                        </form>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- [ form-element ] end -->
+</div>
+{% endblock content %}

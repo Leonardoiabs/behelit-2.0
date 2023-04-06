@@ -18,6 +18,7 @@ class Quadrinhos(models.Model):
 
     nome = models.CharField(max_length=100)
     link = models.URLField()
+    foto = models.ImageField(upload_to='quadrinhos/', null=True)
     descricao = models.TextField()
     status = models.CharField(max_length=30, choices=STATUS_CHOICES)
     tipo = models.CharField(max_length=30, choices=SOURCE_CHOICES)

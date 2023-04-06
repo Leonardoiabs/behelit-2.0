@@ -10,4 +10,10 @@ urlpatterns = [
 
     path('lista_livros/', LivrosList.as_view(), name='livros_list'),
     path('add_livros/', LivrosCreate.as_view(), name='livros_add'),
+    path('update_livros/<int:pk>/', LivrosUpdate.as_view(), name='livros_update'),
+    path('delete_livros/<int:pk>/', LivrosDelete.as_view(), name='livros_delete'),
+    path('detail_livros/<int:pk>/', LivrosDetail.as_view(), name='livros_detail'),
+
+    path('lista_jogos_eletronicos/', JogosEletronicosList.as_view(), name='jogos_eletronicos_list')
+
 ]

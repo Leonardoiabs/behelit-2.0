@@ -1,0 +1,46 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+    <!-- Begin Page Content -->
+                    <div class="container-fluid">
+
+                        <!-- Page Heading -->
+                        <h1 class="h3 mb-4 text-gray-800">Listagem dos Jogos Eletronicos</h1>
+                            <div class="col-md-4">
+                                <div class="row">
+{#                                    <a href="{% url 'quadrinhos_add' %}" class="btn btn-primary" style="margin: 10px">Cadastrar um Título</a>#}
+                                </div>
+                            </div>
+                            <table class="table">
+                              <thead class="thead-dark">
+                                <tr>
+                                  <th scope="col">#</th>
+                                  <th scope="col">Título</th>
+                                  <th scope="col">Status</th>
+                                  <th scope="col">Gênero</th>
+                                  <th scope="col">Plataforma</th>
+                                  <th scope="col">Ações</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                              {%  for jogos_eletronicos in object_list %}
+                                <tr>
+                                  <th scope="row">{{ jogos_eletronicos.id }}</th>
+                                  <td>{{ jogos_eletronicos.nome }}</td>
+                                  <td>{{ jogos_eletronicos.status }}</td>
+                                  <td>{{ jogos_eletronicos.tipo }}</td>
+                                  <td>
+{#                                      <a href="{% url 'quadrinhos_update' quadrinho.id %}" class="btn btn-warning">Atualizar</a>#}
+{#                                      <a href="{% url 'quadrinhos_detail' quadrinho.id %}" class="btn btn-dark">Ver Detalhes</a>#}
+{#                                      <a href="{% url 'quadrinhos_delete' quadrinho.id %}" class="btn btn-danger">Deletar</a>#}
+                                  </td>
+                                </tr>
+                              {% endfor %}
+                              </tbody>
+                            </table>
+                    </div>
+    <!-- /.container-fluid -->
+    {% block footer %}
+        {% include 'base/footer.html' %}
+    {% endblock footer %}
+{% endblock content %}

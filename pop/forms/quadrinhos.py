@@ -16,6 +16,7 @@ class CadastrarQuadrinhos(forms.ModelForm):
         fields = [
             'nome',
             'link',
+            'foto',
             'descricao',
             'status',
             'tipo',

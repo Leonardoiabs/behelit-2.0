@@ -25,8 +25,8 @@ class QuadrinhosUpdate(UpdateView):
 
 class QuadrinhosDelete(DeleteView):
     model = Quadrinhos
-    template_name = 'pop/hq_manga_confirm_delete.html'
     success_url = reverse_lazy('quadrinhos_list')
+    template_name = 'pop/hq_manga_confirm_delete.html'
 
 
 class QuadrinhosDetail(DetailView):
